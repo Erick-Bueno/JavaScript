@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body class="corpo">
+    <h1 id="titulo1">manipulando dom</h1>
+    <p class="paragrafo"> bem vindo</p>
+    <p class="paragrafo"> 2 </p>
+
+    <script>
+        var titulo = document.getElementById("titulo1");
+        titulo.textContent = "olaa";
+
+        var paragrafo = document.getElementsByClassName("paragrafo")[0];
+        paragrafo.textContent = " Meu Mundo";
+
+        var paragrafo = document.getElementsByClassName("paragrafo")[1];
+        paragrafo.textContent = "3";
+        
+        
+        
+    </script>
+</body>
+</html>

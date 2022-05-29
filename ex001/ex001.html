@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgba(31, 100, 238, 0.905);
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .titulo1{
+            text-align: center;
+            color: white;
+        }
+        main{
+           background-color: white;
+           width: 600px;
+           height: 400px;
+           margin: auto;
+           border-radius: 10px;
+           margin-bottom: 10px;
+            
+        }
+        .sec1{
+            padding-top: 20px;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        .sec2{
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
+        button{
+            margin-left: 10px;
+            margin-bottom: 20px;
+        }
+        footer{
+            color: white;
+            text-align: center;
+            font-style: italic;
+        }
+       
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="titulo1">
+            Verificador De Idade
+        </h1>
+    </header>
+    <main>
+        <section class="sec1" id="nascimento">Ano de nascimento: <input type="text" name="" id="nascer"></section> <br>
+       <section class="sec2">
+           Sexo:<input type="radio" name="sexo" id="Masculino" value="M">
+            <Label for="Masculino">Masculino</Label>
+            <input type="radio" name="sexo" id="Feminino" value="F">
+            <Label for="Feminino">Feminino</Label> <br>
+       </section>
+        <button id="verificar" onclick="verificando()">verificar</button>
+        <section id="resultado" class="R">
+
+        </section>
+    </main>
+    <footer>
+        Erick Bueno
+    </footer>
+
+
+    <script>
+        function verificando(){
+            
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema De Multas</h1>
+    velocidade do carro:<input type="text" name="multa" id="multa">
+    <button id="verificar" onclick="calc()">Calcular</button>
+    <div class="r"></div>
+
+    <script>
+        function calc(){
+            var v = document.getElementById("multa").value;
+            var r = document.getElementsByClassName("r")[0]
+            var m = parseFloat(v)
+            r.innerHTML = `<p>sua velocidade é de ${v}</p>`
+            if (m > 60){
+                r.innerHTML+=(`voce vai ser multado pois sua velocidade foi de ${m}km/h ultrapassando o limite permitido`)
+            }else{
+                r.innerHTML+= (`Fique tranquilo voce não vai ser multado`)
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
