@@ -17,8 +17,7 @@
         }
         main{
            background-color: white;
-           width: 600px;
-           height: 400px;
+           width: 400px;
            margin: auto;
            border-radius: 10px;
            margin-bottom: 10px;
@@ -42,6 +41,11 @@
             text-align: center;
             font-style: italic;
         }
+        .R{
+            display: flex;
+            flex-direction: column;
+        }
+    
        
     </style>
 </head>
@@ -54,15 +58,14 @@
     <main>
         <section class="sec1" id="nascimento">Ano de nascimento: <input type="text" name="" id="nascer"></section> <br>
        <section class="sec2">
-           Sexo:<input type="radio" name="sexo" id="Masculino" value="M">
-            <Label for="Masculino">Masculino</Label>
-            <input type="radio" name="sexo" id="Feminino" value="F">
-            <Label for="Feminino">Feminino</Label> <br>
+           Sexo:
+            <input type="radio" name="sexo" id="Masculino" value="M" checked> Masculino
+            <input type="radio" name="sexo" id="Feminino" value="F"> Feminino
        </section>
         <button id="verificar" onclick="verificando()">verificar</button>
-        <section id="resultado" class="R">
-
-        </section>
+        <div id="resultado" class="R">
+                
+        </div>
     </main>
     <footer>
         Erick Bueno
@@ -71,7 +74,54 @@
 
     <script>
         function verificando(){
-            
+           var data = new Date
+           var hoje = data.getFullYear()
+           var m = document.getElementById("Masculino")
+           var s = document.getElementById("Feminino")
+           var nasc = document.getElementById("nascer").value 
+           var R = document.getElementById("resultado")
+           var img = document.createElement("img")
+           R.style.textAlign = "Center"
+           img.style.width =  "250px"
+           img.style.margin = "auto"
+           idade = hoje - parseInt(nasc)
+           
+           if(nasc == "" || nasc > hoje){
+                window.alert("informe um valor valido para data")
+           }else{
+               if(m.checked && idade <= 10){
+                R.textContent = `Detectamos garotinho com ${idade} anos`
+                img.setAttribute("src", "garotinho.png" )
+               }
+               if(s.checked && idade <=10){
+                R.textContent = `Detectamos garotinha com ${idade} anos`
+                img.setAttribute("src", "muie.png")
+               }
+               if(s.checked && idade >10 && idade <21){
+                R.textContent = `Detectamos uma jovem com ${idade} anos`
+                img.setAttribute("src", "mulherado.png")
+               }
+               if(s.checked && idade > 21 && idade < 50){
+                   R.textContent = `Detectamos uma mulher adulta com ${idade} anos`
+                   img.setAttribute("src", "muiezinha.png")
+               }
+               if(s.checked && idade >= 50){
+                   R.textContent = `Detectamos uma mulher idosa com ${idade} anos`
+                   img.setAttribute("src", "idosa.png")
+               }
+               if(m.checked && idade > 10 && idade < 21){
+                   R.textContent = `Detectamos um jovem com ${idade} anos`
+                   img.setAttribute("src","jovemh.png")
+               }
+               if(m.checked && idade > 21 && idade <50){
+                   R.textContent = ` Detectamos um homem adulto com ${idade} anos`
+                   img.setAttribute("src","homemadult.png")
+               }
+               if(m.checked && idade >= 50){
+                   R.textContent = ` Detectamos um homem idoso com ${idade} anos`
+                   img.setAttribute("src", "idoso.png")
+               }
+           }R.appendChild(img)
         }
     
     </script>
