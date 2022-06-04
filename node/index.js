@@ -1,14 +1,14 @@
-var ex = require("express");
+let ex = require("express");
 
-var progam = ex()
+let progam = ex()
 
 
 progam.get("/",function(req, res){
-    res.send("ola mundo")
+    res.sendFile(__dirname + "/sites/index.html")
 });
 
-progam.get("/home",function(req, res){
-    res.send("pagina inicial")
+progam.get("/sobre",function(req, res){
+    res.sendFile(__dirname + "/sites/index2.html")
 })
 
 progam.get("/ola/:nome/:idade", function(req, res){
