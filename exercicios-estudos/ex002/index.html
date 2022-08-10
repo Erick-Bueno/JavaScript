@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+       body{
+        background-color: blue;
+       }
+       header{
+        text-align: center;
+        color: white;
+       }
+       main{
+        background-color: white;
+        width: 400px;
+        margin: auto;
+        margin-top: 50px;
+       }
+        article{
+        padding-top: 20px;
+        padding-left: 20px ;
+       }
+       span{
+        margin-right: 10px;
+       }
+       .article2{
+        padding-top: 20px;
+        padding-left: 20px ;
+       }
+       .span2{
+        margin-right: 25px;
+       }
+       button{
+        margin-top: 20px;
+        margin-left: 20px ;
+       }
+       p{
+        margin-left: 20px;
+        margin-top:10px;
+       }
+       .sec2{
+        padding-bottom: 10px;
+       }
+     
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vamos Contar</h1>
+    </header>
+    <main>
+        <section class="sec1">
+            <article><span>inicio:</span><input type="number" name="" id="inicio"> <br></article>
+            <article class="article2"><span class="span2"> fim:</span><input type="number" name="	" id="fim"> <br></article>
+            <article><span>passo:</span><input type="number" name="" id="passo"> <br></article>
+            <button onclick="passos()">contar</button>
+            
+        </section>
+        <section class = "sec2" id="resultado">
+            <p>contando</p>
+        </section>
+    </main>
+
+    <script>
+        function passos(){
+            let ini = document.getElementById("inicio").value
+            let fim = document.getElementById("fim").value
+            let pass = document.getElementById("passo").value
+            let result = document.getElementById("resultado")
+            result.style.marginTop = "20px"
+            result.style.marginLeft = "20px"
+            if (ini == "" || fim == "" || pass == "" ){
+                window.alert("erro digite valores validos")
+            }else{
+                if (pass == 0){
+                     window.alert("considerando 1")
+                     result.textContent = "contagem iniciada:"
+                     for(c = Number(ini); c <= Number(fim); c = c + 1){
+                     result.textContent = result.textContent +  ` ${c}`
+                }
+            }else{
+                if(Number(ini) < Number(fim)){
+                    result.textContent = "contagem iniciada:"
+                    for(c = Number(ini); c <= Number(fim); c = c + Number(pass)){
+                    result.textContent = result.textContent +  ` ${c}`
+                    }
+                }else{
+                    result.textContent = "contagem iniciada:"
+                    for(c = Number(ini); c >= Number(fim); c = c - Number(pass)){
+                    result.textContent = result.textContent +  ` ${c}`
+                }
+             }
+        }
+    }
+}
+
+
+    </script>
+</body>
+</html>

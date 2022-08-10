@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            TABUADA
+        </h1>
+    </header>
+    <main>
+        <section>NUMERO: <input type="number" name="" id="numero"> <button onclick="tabuada()">Gerar Tabuada</button></section>
+        <section><select size="10" class="select" name="" id="resulta"></select></section>
+    </main>
+
+    <script>
+        function tabuada(){
+            let n = document.getElementById("numero").value
+            let result = document.getElementById("resulta")
+            let valor = Number(n)
+            if(n == ""){
+                window.alert("informe um valor valido")
+            }else{
+            result.textContent = ""
+            for(c=1; c <= 10; c = c + 1){
+                let op = document.createElement("option")
+                let multi = valor * c
+                op.text = `${valor} x ${c} = ${multi}`
+                result.appendChild(op)
+            }
+        }
+    }
+    </script>
+</body>
+</html>

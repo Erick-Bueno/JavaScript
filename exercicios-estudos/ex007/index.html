@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ola mundo</h1>
+    <p>aaa</p>
+    <p>bbbb</p>
+    <p>ccccc</p>
+    <div id="result"></div>
+<script>
+    let tags = document.getElementsByTagName("h1")
+    let r = document.getElementById("result")
+    for(let c = 0; c < tags.length; c = c + 1){
+       r.textContent = r.textContent +  tags[c].innerHTML 
+      
+      
+    }
+</script>
+</body>
+</html>

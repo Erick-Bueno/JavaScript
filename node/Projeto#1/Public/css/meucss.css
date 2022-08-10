@@ -1,0 +1,15 @@
+*{
+    padding:0px;
+    margin: 0px;
+}
+body{
+    background-color: rgb(207, 207, 231);
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    background-color: gray;
+}
+

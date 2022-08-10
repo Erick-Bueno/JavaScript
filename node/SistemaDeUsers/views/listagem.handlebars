@@ -1,0 +1,20 @@
+<h1>listagem</h1>
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>nome</th>
+            <th>email</th>
+        </tr>
+    </thead>
+
+{{#each registros}}
+    <tbody>
+        <tr>
+            <td>{{dataValues.id}}</td>
+            <td>{{dataValues.nome}}</td>
+            <td>{{dataValues.email}}</td>
+        </tr>
+    </tbody>
+{{/each}}
+</table>

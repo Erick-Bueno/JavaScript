@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form1" action="" method="post">
+        Nome: <input type="text" name="" id="" value="erick"> 
+        senha: <input type="password" name="" id="" value="1234">
+        <button>enviar</button>
+    </form>
+    <form id="form2" action="" method="post">
+        Nome: <input type="text" name="" id="" value="erickkkkkk"> 
+        senha: <input type="password" name="" id="" value="1234">
+        <button>enviar</button>
+    </form>
+
+    <script>
+        let nome = document.forms["form1"].elements
+        let nomee = document.forms["form2"].elements[0].value
+        for(let c = 0; c < nome.length; c = c + 1){
+            nome[c].style.color = "red"
+        }
+        document.write(nomee)
+        
+        
+    </script>
+</body>
+</html>

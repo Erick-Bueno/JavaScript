@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    numero entre 1 e 100 <input  type="number" name="" id="numero"> 
+    <button onclick="adicionar()">adicionar</button><br>
+    <select size="10" name="" id="seletor"></select> <br>
+    <button onclick="calc()">finalizar</button> <br>
+    <div id="result"></div>
+
+ <script>
+    let cont = 0
+    let array = []
+    function adicionar(){
+        sele = document.getElementById("seletor")
+        resultado = document.getElementById("result")
+        num = document.getElementById("numero").value
+                if(num > 100){
+                    window.alert("numero invalido")
+                }else{
+                    if(array.indexOf(num) > -1){
+                        window.alert("valor ja existe")
+                    }
+                    else{
+                        array.push(num)
+                        window.alert("valor adicionado")
+                        cont = cont + 1
+                        opcao = document.createElement("option")
+                        opcao.text = `valor ${num} inserido`                    
+                        sele.appendChild(opcao)
+                        
+                    }
+                }
+                  
+                    
+            }
+    function calc(){
+        resultado = document.getElementById("result")
+        let soma = 0
+        let maior = 0
+        let menor = 0
+        let media = 0
+        for(let c = 0; c < array.length; c = c + 1){
+            soma = Number(soma) + Number(array[c])
+            if(c == 0){
+                maior = array[c]
+                menor = array[c]
+            }else{
+                if(array[c] > maior){
+                    maior = array[c]
+                }if(array[c] < menor){
+                    menor = array[c]
+                }
+            }media = Number(soma)/Number(cont)
+        }resultado.innerHTML = `O numero de elementos no array é de ${cont}` + `<br> O maior valor é de ${maior}` + `<br>O menor valor é de ${menor}` + `<br> A soma dos valores é de ${soma}` + `<br> a media dos valores é de ${media}`
+        
+
+    }
+          
+ </script>
+</body>
+</html>
