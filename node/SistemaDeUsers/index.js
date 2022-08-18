@@ -7,11 +7,12 @@ const ficha = require("./models/ficha")
 
 app.use(express.static("public"))
 
+//rota
 app.use(router)
-
+//configurando handlebars
 app.engine("handlebars", handle.engine({defaultLayout:"main"}))
 app.set("view engine", "handlebars")
-
+//configurando bodyparser
 app.use(body.urlencoded({extended:false}))
 app.use(body.json())
 

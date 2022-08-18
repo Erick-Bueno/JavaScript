@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="titulo">Titulo Principal</h1>
+    <p id="paragrafo" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nobis tenetur distinctio quam at impedit incidunt dolor accusamus perspiciatis fugit cumque soluta ut, nesciunt totam ex quas quisquam eaque aliquam!</p>
+    <ul id="lista">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+    </ul>
+    <div class="container">
+        <p>ola</p>
+    </div>
+    <script>
+        const h2 = document.createElement("h2")
+        h2.classList = "titulo2"
+        texto = document.createTextNode("titulo 2")
+        h2.appendChild(texto)
+        const h1 = document.querySelector(".titulo")
+        console.log(h2)
+        const body = h1.parentNode
+        body.replaceChild(h2, h1)
+    
+        
+    </script>
+</body>
+</html>

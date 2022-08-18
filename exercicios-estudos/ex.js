@@ -1,0 +1,17 @@
+const vog = ['a','e','i', 'o', 'u']
+pala =[]
+
+function trocavogal(palavra){
+    const array2 = palavra.split('')
+    for(let c = 0; c < vog.length; c = c + 1){
+        for(let i = 0; i < array2.length; i=i+1){
+            if(vog[c] == array2[i]){
+                array2[i] = 'x'
+                
+                
+            }
+        }
+    }console.log(array2.join(''))
+}
+    
+trocavogal("uva")

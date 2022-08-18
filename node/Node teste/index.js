@@ -27,10 +27,13 @@ express.use(body.json())
 //rotas
 
 //listando dados do banco na pagina
-express.get("/inicio", function(req, res){
-    Cadastro.findAll().then(function(cadastros){ //pegando os dados da tabela Cadastro
-        res.render("home",{cadastros: cadastros}) //enviando oos dados para a pagina respectiva do handlebars
-    })
+express.get("/inicio", async function(req, res){
+    try {
+        const cadastro = await Cadastro.findAll()
+        res.render("home",{cadastro:cadastro}) 
+    } catch (error) {
+        return res.status(404).send(error)
+    }
 })
 
 
@@ -52,6 +55,16 @@ express.post("/dados", function(req, res){
    })
 
  
+    
+})
+express.get("/deletar/:id", async function(req, res){
+    try {
+    const id = req.params.id
+    const excluir = await Cadastro.destroy({where:{'id': id}})
+    res.send("registro deletado")
+    } catch (error) {
+    return res.status(500).send(error)
+    }
     
 })
 //ligando servidor

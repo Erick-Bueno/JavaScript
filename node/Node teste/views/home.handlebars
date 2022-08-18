@@ -8,12 +8,14 @@
 </tr>
 
 
-{{#each cadastros}}
+{{#each cadastro}}
     <table>
-            <td>{{dataValues.id}}</td>
+            <td>{{dataValues.id}}</td> 
             <td>{{dataValues.nome}}</td>
             <td>{{dataValues.idade}}</td>
         </tr>
 
     </table>
+    <a href="/deletar/{{dataValues.id}}"><button>DELETAR</button></a>
+    
 {{/each}}

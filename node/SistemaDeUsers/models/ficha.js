@@ -8,7 +8,8 @@ const Ficha = conexao.banco.define("fichas", {
         type: conexao.sequelize.STRING
     },
     email:{
-        type: conexao.sequelize.STRING
+        type: conexao.sequelize.STRING,
+        unique: true
     },
     cpf:{
         type: conexao.sequelize.STRING
@@ -17,5 +18,6 @@ const Ficha = conexao.banco.define("fichas", {
         type: conexao.sequelize.ENUM('F', 'M')
     }
 })
+
 
 module.exports = Ficha

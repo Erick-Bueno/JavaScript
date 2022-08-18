@@ -35,8 +35,17 @@ router.post("/register", async function(req, res){
         if(errBcrypt){
             return res.status(500).send({erro: errBcrypt})
         }try{
-            //adicionando dados no database
-            const dados = await ficha.create({
+            await con.connect(function(error){
+               if(error) throw error
+               const sql = `SELECT * From fichas where email = '${emaill}'`
+               con.query(sql, async function(error,results){
+                if(error) throw error
+                if(results.length>0){
+                    res.redirect("/register")
+                    console.log("email ja cadastrado")
+                }else{
+                      //adicionando dados no database
+                const dados = await ficha.create({
                 nome: nomee,
                 senha: hash,
                 email: emaill,
@@ -46,6 +55,10 @@ router.post("/register", async function(req, res){
             })
             //redirecionamento para tela de login
             res.redirect("/login")
+        
+            }
+        })
+    })
             
         }
         catch(erro){
@@ -56,7 +69,7 @@ router.post("/register", async function(req, res){
     })
     
 router.get("/login", function(req, res){
-    res.render("")
+    res.render("login")
 })
 //rota de login com mysql
 router.post("/login", async function(req, res){

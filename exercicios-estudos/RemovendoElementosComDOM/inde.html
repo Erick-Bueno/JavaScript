@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="titulo">Titulo Principal</h1>
+    <p id="paragrafo" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro nobis tenetur distinctio quam at impedit incidunt dolor accusamus perspiciatis fugit cumque soluta ut, nesciunt totam ex quas quisquam eaque aliquam!</p>
+    <ul id="lista">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+    </ul>
+    <div class="container">
+        <p>ola</p>
+    </div>
+    <script>
+        
+       const div = document.querySelector(".container")
+       const p = document.querySelector(".container p")
+       div.removeChild(p)
+       const titulo = document.querySelector(".titulo")
+       titulo.remove()
+       const lista = document.querySelectorAll("#lista .item")
+       for(let c = 0; c < lista.length; c = c + 1){
+        lista[c].remove()
+       }
+    </script>
+</body>
+</html>
