@@ -17,4 +17,11 @@ async function b (){
   }
    
 }
-b()
+function c(){
+  a(1).then(function(resultado){
+    return resultado.json()
+  }).then(function(dado){
+    console.log(dado)
+  })
+}
+c()

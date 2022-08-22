@@ -21,6 +21,7 @@
         
        const div = document.querySelector(".container")
        const p = document.querySelector(".container p")
+       const p2 = document.querySelector("#paragrafo")
        div.removeChild(p)
        const titulo = document.querySelector(".titulo")
        titulo.remove()
@@ -28,6 +29,7 @@
        for(let c = 0; c < lista.length; c = c + 1){
         lista[c].remove()
        }
+       p2.remove()
     </script>
 </body>
 </html>
